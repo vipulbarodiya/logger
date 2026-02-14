@@ -25,6 +25,8 @@ public class Logger {
         this.handlerChain = configuration.build();
 
         configuration.appendAppendersForLogHandler(LogLevel.INFO, new ConsoleLogAppender(new TextLogFormatter()));
+        configuration.appendAppendersForLogHandler(LogLevel.DEBUG, new ConsoleLogAppender(new TextLogFormatter()));
+        configuration.appendAppendersForLogHandler(LogLevel.WARN, new ConsoleLogAppender(new TextLogFormatter()));
         configuration.appendAppendersForLogHandler(LogLevel.ERROR, new ConsoleLogAppender(new TextLogFormatter()));
         configuration.appendAppendersForLogHandler(LogLevel.ERROR, new FileLogAppender(new TextLogFormatter(), "logs.txt"));
 
